@@ -5,15 +5,8 @@ import com.pedropathing.follower.FollowerConstants;
 import com.pedropathing.ftc.FollowerBuilder;
 import com.pedropathing.ftc.localization.Encoder;
 import com.pedropathing.ftc.localization.constants.DriveEncoderConstants;
-import com.pedropathing.ftc.localization.localizers.DriveEncoderLocalizer;
-import com.pedropathing.ftc.localization.localizers.ThreeWheelIMULocalizer;
-import com.pedropathing.localization.Localizer;
 import com.pedropathing.paths.PathConstraints;
-import com.pedropathing.ftc.drivetrains.MecanumConstants;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
-
-import org.firstinspires.ftc.teamcode.common.util.Parts;
 
 
 public class Constants {
