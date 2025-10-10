@@ -12,6 +12,7 @@ import dev.nextftc.ftc.Gamepads;
 import dev.nextftc.hardware.impl.MotorEx;
 import dev.nextftc.core.components.BindingsComponent;
 import dev.nextftc.ftc.components.BulkReadComponent;
+import dev.nextftc.core.components.SubsystemComponent;
 import org.firstinspires.ftc.teamcode.common.subsystems.Pivot;
 import org.firstinspires.ftc.teamcode.common.subsystems.Flywheels;
 
@@ -19,6 +20,7 @@ import org.firstinspires.ftc.teamcode.common.subsystems.Flywheels;
 public class tungtungsahur extends NextFTCOpMode {
     public tungtungsahur() {
         addComponents(
+                new SubsystemComponent(Pivot.INSTANCE, Flywheels.INSTANCE),
                 BulkReadComponent.INSTANCE,
                 BindingsComponent.INSTANCE
         );
@@ -60,3 +62,4 @@ public class tungtungsahur extends NextFTCOpMode {
                 .whenBecomesFalse(Flywheels.INSTANCE.stopone.then(Flywheels.INSTANCE.stoptwo));
     }
 }
+
