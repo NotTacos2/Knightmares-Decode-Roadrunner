@@ -13,5 +13,5 @@ public class Pivot implements Subsystem {
 
     // idk names for these
     public Command turn = new SetPosition(Parts.pivot, -0.2).requires(this);
-    public Command otherthan = new SetPosition(Parts.pivot, 0.015).requires(this);
+    public Command reset = new SetPosition(Parts.pivot, 0.015).requires(this);
 }
