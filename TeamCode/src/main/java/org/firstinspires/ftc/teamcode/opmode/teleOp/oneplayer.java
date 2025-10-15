@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.opmode.teleOp;
 
+import dev.nextftc.bindings.BindingManager;
 import dev.nextftc.core.commands.Command;
 import dev.nextftc.ftc.NextFTCOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -53,5 +54,15 @@ public class oneplayer extends NextFTCOpMode {
         Gamepads.gamepad1().b()
                 .whenBecomesTrue(Flywheels.INSTANCE.negpowerone.then(Flywheels.INSTANCE.negpowertwo))
                 .whenBecomesFalse(Flywheels.INSTANCE.stopone.then(Flywheels.INSTANCE.stoptwo));
+    }
+
+    @Override
+    public void onUpdate() {
+        BindingManager.update();
+    }
+
+    @Override
+    public void onStop() {
+        BindingManager.reset();
     }
 }
