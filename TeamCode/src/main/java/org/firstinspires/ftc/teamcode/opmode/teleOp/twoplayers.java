@@ -14,7 +14,7 @@ import org.firstinspires.ftc.teamcode.common.subsystems.Pivot;
 import org.firstinspires.ftc.teamcode.common.subsystems.Flywheels;
 import org.firstinspires.ftc.teamcode.common.Parts;
 
-@TeleOp
+@TeleOp(group = "Decode")
 public class twoplayers extends NextFTCOpMode {
     Parts part = new Parts();
     public twoplayers() {
