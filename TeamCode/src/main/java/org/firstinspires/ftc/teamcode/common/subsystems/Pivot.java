@@ -1,3 +1,5 @@
+// this is our pivot subsystem
+
 package org.firstinspires.ftc.teamcode.common.subsystems;
 
 import dev.nextftc.core.commands.Command;
@@ -12,6 +14,7 @@ public class Pivot implements Subsystem {
     Parts part = new Parts();
 
     // idk names for these
-    public Command turn = new SetPosition(Parts.pivot, -0.2).requires(this);
-    public Command reset = new SetPosition(Parts.pivot, 0.015).requires(this);
+    public Command turn = new SetPosition(Parts.pivot, -0.2).requires(this); // basically this is our turn command and it's setposition because servos doesn't use powers they turn which basically is setpower for servos
+    public Command reset = new SetPosition(Parts.pivot, 0.015).requires(this); // this resets the pivot back to normal
 }
+
