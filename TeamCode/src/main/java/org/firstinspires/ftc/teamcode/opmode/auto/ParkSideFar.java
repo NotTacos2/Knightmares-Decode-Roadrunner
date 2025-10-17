@@ -8,9 +8,7 @@ import com.pedropathing.geometry.BezierLine;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.teamcode.common.pedroPathing.Constants;
 
-import org.firstinspires.ftc.teamcode.common.util.Parts;
-import org.firstinspires.ftc.teamcode.common.util.Robot;
-import org.firstinspires.ftc.teamcode.common.util.Shooter;
+import org.firstinspires.ftc.teamcode.common.Parts;
 
 
 @Autonomous (name = "ParkSideFar", group = "Decode")
@@ -25,8 +23,7 @@ public class ParkSideFar extends LinearOpMode {
     public static final Pose scorepose = new Pose(28.14, 120.52, Math.toRadians(0));
     public static final Pose humanplayer = new Pose(12.63, 11.52, Math.toRadians(0));
     public void runOpMode() throws InterruptedException {
-        Parts config = new Parts(hardwareMap); // configure robot
-        Robot robot = new Robot(); // configure robot
+        Parts config = new Parts(); // configure robot
 
         follower = Constants.createFollower(hardwareMap);
         follower.setStartingPose(startingpose);
@@ -40,8 +37,6 @@ public class ParkSideFar extends LinearOpMode {
             follower.update();
         }
 
-        Shooter.shootauto();
-
         follower.followPath(humanplayers);
         while (follower.isBusy()) {
             follower.update();
@@ -52,8 +47,6 @@ public class ParkSideFar extends LinearOpMode {
             follower.update();
         }
 
-        Shooter.shootauto();
-
         follower.followPath(humanplayers2);
         while (follower.isBusy()) {
             follower.update();
@@ -63,8 +56,6 @@ public class ParkSideFar extends LinearOpMode {
         while (follower.isBusy()) {
             follower.update();
         }
-
-        Shooter.shootauto();
     }
 
     public void buildPaths() {
