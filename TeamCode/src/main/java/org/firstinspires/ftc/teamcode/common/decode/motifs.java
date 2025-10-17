@@ -1,3 +1,5 @@
+// UNUSED CODE IGNORE
+
 package org.firstinspires.ftc.teamcode.common.decode;
 
 public enum motifs {
@@ -5,3 +7,4 @@ public enum motifs {
     PGP,
     GPP
 }
+
