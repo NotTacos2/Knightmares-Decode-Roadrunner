@@ -4,7 +4,6 @@ import dev.nextftc.core.commands.Command;
 import dev.nextftc.core.subsystems.Subsystem;
 import dev.nextftc.hardware.powerable.SetPower;
 import dev.nextftc.control.ControlSystem;
-import dev.nextftc.control.KineticState;
 import org.firstinspires.ftc.teamcode.common.Parts;
 
 public class Flywheels implements Subsystem {
@@ -19,5 +18,4 @@ public class Flywheels implements Subsystem {
     public Command negpowertwo = new SetPower(Parts.flywheel2, -1).requires(this);
     public Command stopone = new SetPower(Parts.flywheel1, 0).requires(this);
     public Command stoptwo = new SetPower(Parts.flywheel2, 0).requires(this);
-
 }
