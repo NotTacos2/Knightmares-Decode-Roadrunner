@@ -21,27 +21,27 @@ public class shooting {
                 Flywheels.INSTANCE.powerone,
                 Flywheels.INSTANCE.powertwo
             ),
-            new Delay(0.5),
+            new Delay(0.75),
             new ParallelGroup(
                  Flywheels.INSTANCE.stopone,
                  Flywheels.INSTANCE.stoptwo
             ),
-            new Delay(0.5),
+            new Delay(0.75),
             new ParallelGroup(
                  Flywheels.INSTANCE.powerone,
                  Flywheels.INSTANCE.powertwo
             ),
-            new Delay(0.5),
+            new Delay(0.75),
             new ParallelGroup(
                  Flywheels.INSTANCE.stopone,
                  Flywheels.INSTANCE.stoptwo
             ),
-            new Delay(0.5),
+            new Delay(0.75),
             new ParallelGroup(
                  Flywheels.INSTANCE.powerone,
                  Flywheels.INSTANCE.powertwo
             ),
-            new Delay(0.5),
+            new Delay(0.75),
             new ParallelGroup(
                  Flywheels.INSTANCE.stopone,
                  Flywheels.INSTANCE.stoptwo

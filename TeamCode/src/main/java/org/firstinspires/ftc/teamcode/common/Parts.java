@@ -10,7 +10,8 @@ public class Parts {
     // declaring parts
     public static MotorEx FR, FL, BR, BL;
     public static MotorEx flywheel1, flywheel2;
-    public static ServoEx pivot;
+    public static MotorEx intake;
+    public static ServoEx pivot, intakeservo, intakeservo2;
     public static IMUEx imu;
 
     public Parts() {
@@ -22,7 +23,11 @@ public class Parts {
         flywheel1 = new MotorEx("shooterOne").reversed().brakeMode();
         flywheel2 = new MotorEx("shooterTwo").brakeMode();
 
+        intake = new MotorEx("intake").brakeMode();
+
         pivot = new ServoEx("pivotServo");
+        intakeservo = new ServoEx("intakeServo");
+        intakeservo2 = new ServoEx("intakeServo2");
 
         imu = new IMUEx("imu", Direction.UP, Direction.RIGHT).zeroed();
     }
