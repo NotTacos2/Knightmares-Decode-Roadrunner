@@ -93,6 +93,7 @@ public class visiontest extends OpMode {
         telemetry.update();
     }
 
+    @SuppressLint("SuspiciousIndentation")
     @Override
     public void loop() {
         rotController.setP(Pr);
@@ -185,4 +186,5 @@ public class visiontest extends OpMode {
 
         telemetry.update();
     }
+
 }
