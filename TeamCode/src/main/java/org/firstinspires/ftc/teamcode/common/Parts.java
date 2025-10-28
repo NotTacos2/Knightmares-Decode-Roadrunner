@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.common;
 import dev.nextftc.hardware.impl.Direction;
 import dev.nextftc.hardware.impl.MotorEx;
 import dev.nextftc.hardware.impl.ServoEx;
+import dev.nextftc.hardware.impl.CRServoEx;
 import dev.nextftc.hardware.impl.IMUEx;
 
 public class Parts {
@@ -10,8 +11,9 @@ public class Parts {
     // declaring parts
     public static MotorEx FR, FL, BR, BL;
     public static MotorEx flywheel1, flywheel2;
-    public static MotorEx intake;
-    public static ServoEx pivot, intakeservo, intakeservo2;
+    public static MotorEx intake, intake2;
+    public static ServoEx pivot; //, intakeservo, intakeservo2;
+    public static MotorEx intakemotor;
     public static IMUEx imu;
 
     public Parts() {
@@ -26,8 +28,7 @@ public class Parts {
         intake = new MotorEx("intake").brakeMode();
 
         pivot = new ServoEx("pivotServo");
-        intakeservo = new ServoEx("intakeServo");
-        intakeservo2 = new ServoEx("intakeServo2");
+        intake2 = new MotorEx("topIntake");
 
         imu = new IMUEx("imu", Direction.UP, Direction.RIGHT).zeroed();
     }

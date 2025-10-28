@@ -56,9 +56,9 @@ public class oneplayer extends NextFTCOpMode {
                 .whenBecomesTrue(Flywheels.INSTANCE.negpowerone.then(Flywheels.INSTANCE.negpowertwo))
                 .whenBecomesFalse(Flywheels.INSTANCE.stopone.then(Flywheels.INSTANCE.stoptwo));
 
-        Gamepads.gamepad1().x()
-                .whenBecomesTrue(Intake.INSTANCE.power.then(Intake.INSTANCE.turn.then(Intake.INSTANCE.turn2)))
-                .whenBecomesFalse(Intake.INSTANCE.stop.then(Intake.INSTANCE.reset.then(Intake.INSTANCE.reset2)));
+        //Gamepads.gamepad1().x()
+            //    .whenBecomesTrue(Intake.INSTANCE.power.then(Intake.INSTANCE.turn.then(Intake.INSTANCE.turn2)))
+              //  .whenBecomesFalse(Intake.INSTANCE.stop.then(Intake.INSTANCE.reset.then(Intake.INSTANCE.reset2)));
     }
 
     @Override

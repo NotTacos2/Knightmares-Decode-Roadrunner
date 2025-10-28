@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.common.vision;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.util.Size;
 
@@ -24,7 +25,7 @@ import org.firstinspires.ftc.teamcode.common.Parts;
 
 import java.util.List;
 
-@TeleOp(name = "", group = "Decode")
+@TeleOp(group = "Decode")
 public class visiontest extends OpMode {
     public ColorBlobLocatorProcessor purpleLocator, greenLocator;
     PIDFController rotController, yController, xController;

@@ -13,6 +13,7 @@ import dev.nextftc.ftc.components.BulkReadComponent;
 import dev.nextftc.core.components.SubsystemComponent;
 import org.firstinspires.ftc.teamcode.common.subsystems.Pivot;
 import org.firstinspires.ftc.teamcode.common.subsystems.Flywheels;
+import org.firstinspires.ftc.teamcode.common.subsystems.Intake;
 import org.firstinspires.ftc.teamcode.common.Parts;
 
 @TeleOp(group = "Decode")
@@ -20,7 +21,7 @@ public class twoplayers extends NextFTCOpMode {
     Parts part = new Parts();
     public twoplayers() {
         addComponents(
-                new SubsystemComponent(Pivot.INSTANCE, Flywheels.INSTANCE),
+                new SubsystemComponent(Pivot.INSTANCE, Flywheels.INSTANCE, Intake.INSTANCE),
                 BulkReadComponent.INSTANCE,
                 BindingsComponent.INSTANCE
         );
@@ -54,6 +55,15 @@ public class twoplayers extends NextFTCOpMode {
         Gamepads.gamepad2().b()
                 .whenBecomesTrue(Flywheels.INSTANCE.negpowerone.then(Flywheels.INSTANCE.negpowertwo))
                 .whenBecomesFalse(Flywheels.INSTANCE.stopone.then(Flywheels.INSTANCE.stoptwo));
+
+        Gamepads.gamepad2().leftTrigger().greaterThan(0.2)
+                .whenBecomesTrue(Intake.INSTANCE.power)
+                .whenBecomesFalse(Intake.INSTANCE.stop);
+
+        Gamepads.gamepad2().x()
+                .whenBecomesTrue(Intake.INSTANCE.rotationcon)
+                .whenBecomesFalse(Intake.INSTANCE.rotationconstop);
+
     }
 
     @Override
