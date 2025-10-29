@@ -1,21 +1,32 @@
 package org.firstinspires.ftc.teamcode.common.subsystems;
 
+import com.bylazar.configurables.annotations.Configurable;
 import dev.nextftc.core.commands.Command;
 import dev.nextftc.core.subsystems.Subsystem;
+import dev.nextftc.hardware.controllable.RunToVelocity;
 import dev.nextftc.hardware.powerable.SetPower;
 import dev.nextftc.control.ControlSystem;
 import org.firstinspires.ftc.teamcode.common.Parts;
 
+@Configurable
 public class Flywheels implements Subsystem {
     public static final Flywheels INSTANCE = new Flywheels();
     private Flywheels() {}
 
     Parts part = new Parts();
 
-    public Command powerone = new SetPower(Parts.flywheel1, 1).requires(this);
-    public Command powertwo = new SetPower(Parts.flywheel2, 1).requires(this);
-    public Command negpowerone = new SetPower(Parts.flywheel1, -1).requires(this);
-    public Command negpowertwo = new SetPower(Parts.flywheel2, -1).requires(this);
-    public Command stopone = new SetPower(Parts.flywheel1, 0).requires(this);
-    public Command stoptwo = new SetPower(Parts.flywheel2, 0).requires(this);
+    private final ControlSystem powercontrolled = ControlSystem.builder()
+            .posPid(0.02)
+            .build();
+
+    // idk if this is good or not
+    public final Command off = new RunToVelocity(powercontrolled, 0.0).requires(this);
+    public final Command on = new RunToVelocity(powercontrolled, 1500.0).requires(this);
+    public final Command reverse = new RunToVelocity(powercontrolled, -1500.0).requires(this);
+
+    @Override
+    public void periodic() {
+        Parts.flywheel1.setPower(powercontrolled.calculate(Parts.flywheel1.getState()));
+        Parts.flywheel2.setPower(powercontrolled.calculate(Parts.flywheel2.getState()));
+    }
 }

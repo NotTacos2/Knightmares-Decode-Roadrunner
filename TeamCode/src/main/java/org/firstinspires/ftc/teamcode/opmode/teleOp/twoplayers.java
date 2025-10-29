@@ -49,12 +49,12 @@ public class twoplayers extends NextFTCOpMode {
         );
 
         Gamepads.gamepad2().a()
-                .whenBecomesTrue(Flywheels.INSTANCE.powerone.then(Flywheels.INSTANCE.powertwo))
-                .whenBecomesFalse(Flywheels.INSTANCE.stopone.then(Flywheels.INSTANCE.stoptwo));
+                .whenBecomesTrue(Flywheels.INSTANCE.on)
+                .whenBecomesFalse(Flywheels.INSTANCE.off);
 
         Gamepads.gamepad2().b()
-                .whenBecomesTrue(Flywheels.INSTANCE.negpowerone.then(Flywheels.INSTANCE.negpowertwo))
-                .whenBecomesFalse(Flywheels.INSTANCE.stopone.then(Flywheels.INSTANCE.stoptwo));
+                .whenBecomesTrue(Flywheels.INSTANCE.reverse)
+                .whenBecomesFalse(Flywheels.INSTANCE.off);
 
         Gamepads.gamepad2().leftTrigger().greaterThan(0.2)
                 .whenBecomesTrue(Intake.INSTANCE.power)
