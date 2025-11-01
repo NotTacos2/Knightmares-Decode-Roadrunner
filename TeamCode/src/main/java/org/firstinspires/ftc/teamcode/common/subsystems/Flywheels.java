@@ -16,13 +16,14 @@ public class Flywheels implements Subsystem {
     Parts part = new Parts();
 
     private final ControlSystem powercontrolled = ControlSystem.builder()
-            .posPid(0.02)
+            .velPid(0.011) // maybe??
+            .basicFF(0.005)
             .build();
 
     // idk if this is good or not
     public final Command off = new RunToVelocity(powercontrolled, 0.0).requires(this);
-    public final Command on = new RunToVelocity(powercontrolled, 1500.0).requires(this);
-    public final Command reverse = new RunToVelocity(powercontrolled, -1500.0).requires(this);
+    public final Command on = new RunToVelocity(powercontrolled, 1000.0).requires(this);
+    public final Command reverse = new RunToVelocity(powercontrolled, -1000.0).requires(this);
 
     @Override
     public void periodic() {
