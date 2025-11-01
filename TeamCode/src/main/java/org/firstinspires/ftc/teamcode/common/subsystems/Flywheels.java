@@ -17,17 +17,18 @@ public class Flywheels implements Subsystem {
 
     private final ControlSystem powercontrolled = ControlSystem.builder()
             .velPid(0.011) // maybe??
-            .basicFF(0.005)
+            .basicFF(0.003)
             .build();
 
     // idk if this is good or not
     public final Command off = new RunToVelocity(powercontrolled, 0.0).requires(this);
-    public final Command on = new RunToVelocity(powercontrolled, 1000.0).requires(this);
-    public final Command reverse = new RunToVelocity(powercontrolled, -1000.0).requires(this);
+    public final Command on = new RunToVelocity(powercontrolled, 850.0).requires(this);
+    public final Command reverse = new RunToVelocity(powercontrolled, -850.0).requires(this);
 
     @Override
     public void periodic() {
         Parts.flywheel1.setPower(powercontrolled.calculate(Parts.flywheel1.getState()));
         Parts.flywheel2.setPower(powercontrolled.calculate(Parts.flywheel2.getState()));
     }
+
 }
