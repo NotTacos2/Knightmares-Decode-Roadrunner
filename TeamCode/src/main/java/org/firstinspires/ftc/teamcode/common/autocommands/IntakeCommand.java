@@ -6,12 +6,11 @@ import dev.nextftc.core.commands.groups.ParallelGroup;
 import dev.nextftc.core.commands.groups.SequentialGroup;
 import dev.nextftc.core.components.SubsystemComponent;
 
-import org.firstinspires.ftc.teamcode.common.subsystems.Pivot;
 import org.firstinspires.ftc.teamcode.common.subsystems.Intake;
 
 public class IntakeCommand {
     public IntakeCommand() {
-        new SubsystemComponent(Pivot.INSTANCE, Intake.INSTANCE);
+        new SubsystemComponent(Intake.INSTANCE);
     }
 
     public Command autoRoutine() {
@@ -29,3 +28,4 @@ public class IntakeCommand {
         );
     }
 }
+
