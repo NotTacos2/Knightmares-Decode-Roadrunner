@@ -60,7 +60,7 @@ public class twoplayers extends NextFTCOpMode {
                 .whenBecomesTrue(Intake.INSTANCE.power)
                 .whenBecomesFalse(Intake.INSTANCE.stop);
 
-        Gamepads.gamepad2().x()
+        Gamepads.gamepad2().rightTrigger().greaterThan(0.2)
                 .whenBecomesTrue(Intake.INSTANCE.rotationcon)
                 .whenBecomesFalse(Intake.INSTANCE.rotationconstop);
 
@@ -76,3 +76,4 @@ public class twoplayers extends NextFTCOpMode {
         BindingManager.reset();
     }
 }
+
