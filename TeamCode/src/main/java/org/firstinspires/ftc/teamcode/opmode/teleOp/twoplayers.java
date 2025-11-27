@@ -54,15 +54,7 @@ public class twoplayers extends NextFTCOpMode {
 
         Gamepads.gamepad2().b()
                 .whenBecomesTrue(Flywheels.INSTANCE.reverse)
-                .whenBecomesFalse(Flywheels.INSTANCE.off);
-
-        Gamepads.gamepad2().x()
-                .whenBecomesTrue(Intake.INSTANCE.reverse)
-                .whenBecomesFalse(Intake.INSTANCE.stop);
-        
-        Gamepads.gamepad2().y()
-                .whenBecomesTrue(Intake.INSTANCE.rotationconreverse)
-                .whenBecomesFalse(Intake.INSTANCE.rotationconstop);        
+                .whenBecomesFalse(Flywheels.INSTANCE.off);      
 
         Gamepads.gamepad2().leftTrigger().greaterThan(0.2)
                 .whenBecomesTrue(Intake.INSTANCE.power)
@@ -84,5 +76,6 @@ public class twoplayers extends NextFTCOpMode {
         BindingManager.reset();
     }
 }
+
 
 
