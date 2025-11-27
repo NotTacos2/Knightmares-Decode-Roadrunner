@@ -56,9 +56,13 @@ public class oneplayer extends NextFTCOpMode {
                 .whenBecomesTrue(Flywheels.INSTANCE.reverse)
                 .whenBecomesFalse(Flywheels.INSTANCE.off);
 
-        //Gamepads.gamepad1().x()
-            //    .whenBecomesTrue(Intake.INSTANCE.power.then(Intake.INSTANCE.turn.then(Intake.INSTANCE.turn2)))
-              //  .whenBecomesFalse(Intake.INSTANCE.stop.then(Intake.INSTANCE.reset.then(Intake.INSTANCE.reset2)));
+        Gamepads.gamepad1().leftTrigger().greaterThan(0.2)
+                .whenBecomesTrue(Intake.INSTANCE.power)
+                .whenBecomesFalse(Intake.INSTANCE.stop);
+
+        Gamepads.gamepad1().rightTrigger().greaterThan(0.2)
+                .whenBecomesTrue(Intake.INSTANCE.rotationcon)
+                .whenBecomesFalse(Intake.INSTANCE.rotationconstop);
     }
 
     @Override
@@ -71,4 +75,5 @@ public class oneplayer extends NextFTCOpMode {
         BindingManager.reset();
     }
 }
+
 
