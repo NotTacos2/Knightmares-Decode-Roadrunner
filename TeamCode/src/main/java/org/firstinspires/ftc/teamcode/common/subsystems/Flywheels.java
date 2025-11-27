@@ -5,8 +5,6 @@ import dev.nextftc.core.commands.Command;
 import dev.nextftc.core.subsystems.Subsystem;
 import dev.nextftc.hardware.controllable.RunToVelocity;
 import dev.nextftc.hardware.powerable.SetPower;
-import com.pedropathing.control.PIDFController;
-import com.pedropathing.control.PIDFCoefficients;
 import dev.nextftc.control.ControlSystem;
 import org.firstinspires.ftc.teamcode.common.Parts;
 
@@ -37,4 +35,5 @@ public class Flywheels implements Subsystem {
     }
 
 }
+
 
