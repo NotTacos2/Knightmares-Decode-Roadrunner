@@ -24,7 +24,7 @@ public class Parts {
         flywheel2 = new MotorEx("shooterTwo").brakeMode();
 
         intake = new MotorEx("intake").brakeMode();
-        intake2 = new MotorEx("topIntake").brakeMode();
+        intake2 = new MotorEx("topIntake").reversed().brakeMode();
 
         pivot = new ServoEx("pivotServo");
 
