@@ -16,9 +16,10 @@ public class Intake implements Subsystem {
 
     public Command power = new SetPower(Parts.intake, 1).requires(this);
     public Command stop = new SetPower(Parts.intake, 0).requires(this);
-    public Command rotationcon = new SetPower(Parts.intake2, -1);
-    public Command rotationconstop = new SetPower(Parts.intake2, 0);
+    public Command rotationcon = new SetPower(Parts.intake2, -1).requires(this);
+    public Command rotationconstop = new SetPower(Parts.intake2, 0).requires(this);
 }
+
 
 
 
