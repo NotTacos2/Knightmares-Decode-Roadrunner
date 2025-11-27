@@ -18,8 +18,8 @@ public class Flywheels implements Subsystem {
     Parts part = new Parts();
 
     // TODO: fix this not connecting to the dashboard
-    public final double proportionalgain = 0.015;
-    public final double velocity = 1050.0;
+    public final double proportionalgain = 0.005;
+    public final double velocity = 100.0;
     public final ControlSystem powercontrolled = ControlSystem.builder()
             .velPid(proportionalgain)
             .basicFF(0.003)
@@ -37,3 +37,4 @@ public class Flywheels implements Subsystem {
     }
 
 }
+
