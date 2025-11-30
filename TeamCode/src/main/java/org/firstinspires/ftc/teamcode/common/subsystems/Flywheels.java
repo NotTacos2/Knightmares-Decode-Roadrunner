@@ -4,6 +4,7 @@ import com.bylazar.configurables.annotations.Configurable;
 import dev.nextftc.core.commands.Command;
 import dev.nextftc.core.subsystems.Subsystem;
 import dev.nextftc.hardware.controllable.RunToVelocity;
+import dev.nextftc.control.feedback.PIDCoefficients;
 import dev.nextftc.hardware.powerable.SetPower;
 import dev.nextftc.control.ControlSystem;
 import org.firstinspires.ftc.teamcode.common.Parts;
@@ -14,12 +15,11 @@ public class Flywheels implements Subsystem {
     private Flywheels() {}
 
     Parts part = new Parts();
-
-    // TODO: fix this not connecting to the dashboard
-    public final double proportionalgain = 0.005;
+    public static PIDCoefficients coefficients = new PIDCoefficients(0.005, 0, 0);
+    
     public final double velocity = 150.0;
     public final ControlSystem powercontrolled = ControlSystem.builder()
-            .velPid(proportionalgain)
+            .velPid(coefficients)
             .basicFF(0.003)
             .build();
 
@@ -35,6 +35,7 @@ public class Flywheels implements Subsystem {
     }
 
 }
+
 
 
 
