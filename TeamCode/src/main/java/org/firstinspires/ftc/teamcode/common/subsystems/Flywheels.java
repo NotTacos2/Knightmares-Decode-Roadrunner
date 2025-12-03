@@ -15,9 +15,9 @@ public class Flywheels implements Subsystem {
     private Flywheels() {}
 
     Parts part = new Parts();
-    public static PIDCoefficients coefficients = new PIDCoefficients(0.005, 0, 0);
+    public static PIDCoefficients coefficients = new PIDCoefficients(0.004, 0, 0);
     
-    public final double velocity = 150.0;
+    public final double velocity = 100.0;
     public final ControlSystem powercontrolled = ControlSystem.builder()
             .velPid(coefficients)
             .basicFF(0.003)
@@ -35,6 +35,7 @@ public class Flywheels implements Subsystem {
     }
 
 }
+
 
 
 
